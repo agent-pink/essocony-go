@@ -43,6 +43,8 @@ func (a Article) HtmlContents() template.HTML {
 	return template.HTML(a.Contents)
 }
 
+type ArticleMap map[string]*Article
+
 type Articles []*Article
 
 func (a Articles) Len() int {
