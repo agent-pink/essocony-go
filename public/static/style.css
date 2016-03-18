@@ -33,12 +33,12 @@ h2.date {
 }
 
 a {
-	color: black;
+	color: #000033;
 }
 
 a:hover {
-	color: white;
-	background-color: black;
+	color: #00ffff;
+	background-color: #000000;
 }
 
 table {
