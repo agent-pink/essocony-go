@@ -14,6 +14,7 @@ type Metadata struct {
 	Slug   string `json: slug`
 	Author string `json: author`
 	Date   string `json: date`
+	time   *time.Time
 }
 
 var houston *time.Location
@@ -27,10 +28,14 @@ func init() {
 }
 
 func (m *Metadata) Time() time.Time {
+	if m.time != nil {
+		return *m.time
+	}
 	time, err := time.ParseInLocation("2006-01-02 15:04:05", m.Date, houston)
 	if err != nil {
 		panic(err)
 	}
+	m.time = &time
 	return time
 }
 
