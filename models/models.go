@@ -26,7 +26,7 @@ func init() {
 	}
 }
 
-func (m Metadata) Time() time.Time {
+func (m *Metadata) Time() time.Time {
 	time, err := time.ParseInLocation("2006-01-02 15:04:05", m.Date, houston)
 	if err != nil {
 		panic(err)
@@ -39,7 +39,7 @@ type Article struct {
 	Contents string
 }
 
-func (a Article) HtmlContents() template.HTML {
+func (a *Article) HtmlContents() template.HTML {
 	return template.HTML(a.Contents)
 }
 
