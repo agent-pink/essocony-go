@@ -72,17 +72,17 @@ func loadArticle(fname string) (Article, error) {
 	}
 	defer file.Close()
 	s := bufio.NewScanner(file)
-	metastr := ""
+	metastr := []byte{}
 	for s.Scan() {
 		if s.Text() == "" {
 			break
 		}
-		metastr += s.Text() + "\n"
+		metastr = append(metastr, []byte(s.Text()+"\n")...)
 	}
 	if s.Err() != nil {
 		return article, err
 	}
-	json.Unmarshal([]byte(metastr), &article.Metadata)
+	json.Unmarshal(metastr, &article.Metadata)
 	for s.Scan() {
 		article.Contents += s.Text() + "\n"
 	}
