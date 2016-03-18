@@ -1,9 +1,9 @@
 {{ define "head" }}
-<title>Hello World</title>
+<title>Essocony</title>
 {{ end }}
 {{ define "body" }}
 <div class="masthead">
-	<h1><a href="/">Hello World</a></h1>
+	<h1><a href="/">Essocony</a></h1>
 </div>
 <div class="articles">
 	{{ range . }}
