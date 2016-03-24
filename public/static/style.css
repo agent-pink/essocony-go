@@ -7,7 +7,7 @@ body {
 	text-align: justify;
 }
 
-h1.masthead {
+div.masthead h1 {
 	font-size: 3em;
 }
 
